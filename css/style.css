@@ -148,16 +148,22 @@ body {
   display: block;
 }
 form {
-  width: 100%;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   gap: 2rem;
 }
 
-.url-input {
+.input-field {
   width: 60%;
+}
+.error-msg {
+  color: red;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+.url-input {
+  width: 100%;
   padding: 1rem;
   border-radius: 10px;
   border: none;
@@ -168,6 +174,7 @@ form {
 
 .error {
   border: 3px solid red;
+  color: red;
 }
 
 .btn-sq {
@@ -183,6 +190,7 @@ form {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  gap: 2rem;
 }
 
 .right {
@@ -192,8 +200,33 @@ form {
   gap: 2rem;
 }
 
+.link-con {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  overflow-y: hidden;
+  padding: 0 0.5rem;
+}
+
+.link-con::-webkit-scrollbar {
+  width: 1rem;
+  height: 0.6rem;
+  border-radius: 50px;
+}
+
+.link-con::-webkit-scrollbar-thumb {
+  background-color: rgb(180, 180, 180);
+  border-radius: 100vw;
+  border: 1.5px solid rgb(233, 233, 233);
+}
+
+.link-con::-webkit-scrollbar-track {
+  background-color: rgb(233, 233, 233);
+  border-radius: 100vw;
+}
 .copy {
   padding: 0.5rem 1rem;
+  width: max-content;
 }
 
 .link,
@@ -465,18 +498,28 @@ footer {
 
   form {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     width: 80%;
   }
+
   .form {
     background: url(..//images/bg-boost-mobile.svg);
     background-repeat: no-repeat;
     background-position: top right;
     background-color: hsl(257, 27%, 26%);
   }
+
+  .input-field {
+    width: 100%;
+  }
   .url-input {
     width: 100%;
   }
+
   .shorten-btn {
+    padding: 1rem;
     width: 100%;
   }
 
@@ -488,11 +531,34 @@ footer {
     align-items: center;
   }
 
+  .link-con {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .link {
     width: 100%;
     border-bottom: 1px solid hsl(0, 0%, 75%);
     padding: 1.4rem;
     margin-bottom: 1rem;
+    overflow: auto;
+  }
+
+  .link::-webkit-scrollbar {
+    width: 1rem;
+    height: 0.6rem;
+    border-radius: 50px;
+  }
+
+  .link::-webkit-scrollbar-thumb {
+    background-color: rgb(180, 180, 180);
+    border-radius: 100vw;
+    border: 1.5px solid rgb(233, 233, 233);
+  }
+
+  .link::-webkit-scrollbar-track {
+    background-color: rgb(233, 233, 233);
+    border-radius: 100vw;
   }
 
   .right {
